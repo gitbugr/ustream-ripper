@@ -1,0 +1,19 @@
+{
+  "name": "ustream-ripper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "window": {
+    "toolbar": false,
+    "width": 800,
+    "height": 500
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nwjs-open-link-in-browser": "^1.0.3"
+  }
+}
