@@ -4,16 +4,17 @@ var date = new Date();
 var ffmpegFile, ffprobeFile;
 var request = require('request');
 var outputdir;
+var os = require("os");
 
 if(process.platform == "win32"){
   ffmpegFile="windows/ffmpeg.exe";
   ffprobeFile="windows/ffprobe.exe";
-  outputdir="%USERPROFILE%/Desktop/"
+  outputdir="C:/Users/"+process.env['USERPROFILE'].split(path.sep)[2]+"/Desktop/";
 }
 else if(process.platform == "darwin"){
   ffmpegFile="mac/ffmpeg";
   ffprobeFile="mac/ffprobe";
-  outputdir="~/Desktop/"
+  outputdir="/Users/"+os.userInfo().username+"/desktop/";
 }
 else{
   process.exit();
@@ -68,4 +69,4 @@ $(function(){
     $('.timestamp').text("Loading");
 
   });
-});
+});//17042602
