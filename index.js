@@ -61,8 +61,13 @@ $(function(){
     var url = "http://iphone-streaming.ustream.tv/uhls/"+$('input[name="channel"]').val()+"/streams/live/iphone/playlist.m3u8";
       startRecording(url);
   });
+  $('input[name="directory"]').val(outputdir);
+  $('input[name="directory"]').change(()=>{
+    outputdir = $(this).val();
+  });
+
   $('button[name="stop"]').click(function(){
-    command.kill();
+    command.kill('SIGINT');
     alert("Stopped Recording.");
     $('.ripping').css({display:"none"});
     $('.not-ripping').css({display:"block"});
@@ -70,3 +75,7 @@ $(function(){
 
   });
 });//17042602
+
+function updateFile(ev){
+  alert($(ev).val());
+}
