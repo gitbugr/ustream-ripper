@@ -33,8 +33,6 @@ function startRecording(url){
       .input(url)
       .inputOptions(['-re'])
       .output(outputdir+date.getTime()+'.mp4')
-      .audioCodec('libmp3lame')
-      .videoCodec('libx264')
       .on('start',function(){
         $('.ripping').css({display:"block"});
         $('.not-ripping').css({display:"none"});
